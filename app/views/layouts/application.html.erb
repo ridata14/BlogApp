@@ -8,15 +8,20 @@
 </head>
 <body>
 
-
 <div class="container">
-	<div class="col-md-12 col-centered">
 
-		<%= render "layouts/navbar" %>
+		<div class="col-md-12 col-centered">
 
-		<%= yield %>
+			<%= render "layouts/navbar" %>
 
-	</div>
+			<%= yield %>
+
+			<%= render "layouts/footer" %>
+
+		</div>
+
+		
+
 </div>
 
 </body>
