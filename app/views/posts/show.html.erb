@@ -1,14 +1,13 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Title:</strong>
-  <%= @post.title %>
+  <h1><%= @posts.title %></h1>
+</p>
+
+<p><h3>by <%= @posts.user.name %></h3>
+<i><%= @posts.updated_at.strftime("Updated last %a, %m/%d/%Y, %I:%M%p") %></i>
 </p>
 
 <p>
-  <strong>Body:</strong>
-  <%= @post.body %>
+  <strong><%= @posts.body %></strong>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>

@@ -15,19 +15,16 @@
 
 			<%= render "layouts/navbar" %>
 			
-			<% if flash[:notice] %>
-				<div class="well"><%= flash[:notice] %></div>
-			<% else %>
-
-			<% end %>
+				<% if flash[:notice] %>
+					<div class="well"><%= flash[:notice] %></div>
+				<% else %>
+				<% end %>
 
 			<%= yield %>
 
-			<%= render "layouts/footer" %>
-
 		</div>
 
-		
+		<%= render "layouts/footer" %>
 
 </div>
 

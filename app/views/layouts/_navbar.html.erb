@@ -19,7 +19,7 @@
         <li><%= link_to "Your Posts", posts_path %></li>
       <% else %>
       <% end %>
-      
+
         <li><%= link_to "Home", pages_home_path %></li>
         <li><%= link_to "About", pages_about_path %></li>
       </ul>
@@ -28,7 +28,7 @@
 
       <% if user_signed_in? %>
           <li><span class="navbar-brand">Welcome <%= link_to current_user.name, '/#' %></span></li>
-          <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+          <li><%= link_to "Account Settings", edit_user_registration_path %></li>
           <li><%= link_to "Log-out", destroy_user_session_path, method: :delete %></li>
        
       <% else %>
