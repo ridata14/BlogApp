@@ -14,13 +14,14 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        
+        <li><%= link_to "Home", "pages/home" %></li>
+        <li><%= link_to "About", "pages/about" %></li>
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
 
       <% if user_signed_in? %>
-
+          <li><span class="navbar-brand">Welcome <%= link_to current_user.email, '/#' %></span></li>
           <li><%= link_to "Log-out", destroy_user_session_path, method: :delete %></li>
        
       <% else %>

@@ -1,11 +1,14 @@
 <div class="jumbotron">
 	
-<h1>The Lorem Ipsum Shit</h1>
+<h1>The 101 Food Blog</h1>
 
 <p>Lorem ipsum dolor sit amet, solet everti nec ut, mei nemore ancillae perpetua in, utinam everti usu ea. Eu audire qualisque principes pro, aeterno equidem nam te, sed dicta aeque eloquentiam ea. Delectus percipit cu eam, in ferri facer nobis vix. In vis justo scribentur. Pro cu virtute periculis, simul ubique volutpat cu mea, per suscipit partiendo disputationi et. His id commune consulatu, vel electram temporibus comprehensam an. Fierent euripidis sed an, vix bonorum antiopam in.
 </p>
 
-
-<%= link_to 'Sign-Up Now!', new_user_registration_path, class: 'btn btn-primary centered' %>
+	<% if user_signed_in? %>
+		
+	<% else %>
+		<%= link_to 'Sign-Up Now!', new_user_registration_path, class: 'btn btn-primary centered' %>
+	<% end %>
 
 </div>
