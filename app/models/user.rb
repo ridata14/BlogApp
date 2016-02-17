@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   validates :name, presence: true, length: { maximum: 25, minimum: 8 }
 
   has_many :posts
+  has_many :comments
 
 end

@@ -10,4 +10,13 @@
   <strong><%= @posts.body %></strong>
 </p>
 
-<%= link_to 'Back', posts_path %>
+<h3><%= @posts.comments.count %> Comments</h3>
+
+<%= render @posts.comments %>
+
+<% if user_signed_in? %>
+	<%= render 'layouts/comment_form' %>
+<% else %>
+
+<% end %>
+
