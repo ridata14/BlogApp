@@ -12,7 +12,27 @@
 
 <h3><%= @posts.comments.count %> Comments</h3>
 
-<%= render @posts.comments %>
+<% #render @posts.comments %>
+
+<div class='row'>
+	<div class='comments col-md-6'>
+	
+	<% @posts.comments.each do |comment| %>
+		<p>
+		  <b><div class='author-name'><%= comment.commenter %>:</div></b>
+			<i><time><%= time_ago_in_words(comment.updated_at)%> ago.</time></i>
+		  <p><div class='comment-content'><span><%= comment.body %></span></div></p>
+		</p>
+
+		<%= link_to 'Delete', [@posts, comment],
+               				method: :delete, 
+               				class: 'delete-link'  %>
+
+	<% end %>
+	
+		
+	</div>
+</div>
 
 <% if user_signed_in? %>
 	<%= render 'layouts/comment_form' %>
