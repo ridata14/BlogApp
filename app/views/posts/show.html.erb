@@ -2,17 +2,19 @@
   <h1><%= @posts.title %></h1>
 </p>
 
-<p><h3>by <%= @posts.user.name %></h3>
-<i><%= @posts.updated_at.strftime("Updated last %a, %m/%d/%Y, %I:%M%p") %></i>
+<p><%= image_tag @posts.user.avatar.url(:thumb), class: 'avatar' %><h5>by <b><%= @posts.user.name %></b></h5>
+<span class='date-update'><i><%= @posts.updated_at.strftime("Updated last %a, %m/%d/%Y, %I:%M%p") %></i></span>
 </p>
 
-<p>
-  <strong><%= @posts.body %></strong>
-</p>
 
-<h3><%= @posts.comments.count %> Comments</h3>
 
-<% #render @posts.comments %>
+<div class="comments">
+	<p>
+	  <strong><%= @posts.body %></strong>
+	</p>
+
+	<h3><%= @posts.comments.count %> Comments</h3>
+</div>
 
 <div class='row'>
 	<div class='comments col-md-6'>
@@ -39,4 +41,3 @@
 <% else %>
 
 <% end %>
-
