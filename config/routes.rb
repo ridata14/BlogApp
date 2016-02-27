@@ -2,10 +2,13 @@ Rails.application.routes.draw do
   
   get 'pages/about'
   get 'pages/home'
+  get 'pages/profile'
 
   devise_for :users
   
   resources :pages
+  resources :profiles
+  resources :users, :only => [:show]
 
   resources :posts do 
     resources :comments

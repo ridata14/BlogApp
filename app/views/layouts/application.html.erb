@@ -9,23 +9,24 @@
 <body>
 
 <div class="container">
-
 		<div class="col-md-12 col-centered">
 
 			<%= render "layouts/navbar" %>
-			
-				<% if flash[:notice] %>
-					<div class="well"><%= flash[:notice] %></div>
-				<% else %>
-				<% end %>
+	
+			<div class="content-container">
+				
+					<% if flash[:notice] %>
+						<div class="well"><%= flash[:notice] %></div>
+					<% else %>
+					<% end %>
 
-			<%= yield %>
+				<%= yield %>
 
+			</div>
+	
 		</div>
-
-<%= render "layouts/footer" %>
-
-</div>
+			<%= render "layouts/footer" %>
+	</div>
 
 </body>
 

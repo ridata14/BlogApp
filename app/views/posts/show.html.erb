@@ -6,38 +6,22 @@
 <span class='date-update'><i><%= @posts.updated_at.strftime("Updated last %a, %m/%d/%Y, %I:%M%p") %></i></span>
 </p>
 
-
-
 <div class="comments">
 	<p>
 	  <strong><%= @posts.body %></strong>
 	</p>
 
-	<h3><%= @posts.comments.count %> Comments</h3>
+<br />
+
+	<h4><%= @posts.comments.count %> Comments</h4>
 </div>
 
-<div class='row'>
-	<div class='comments col-md-6'>
-	
-	<% @posts.comments.each do |comment| %>
-		<p>
-		  <b><div class='author-name'><%= comment.commenter %>:</div></b>
-			<i><time><%= time_ago_in_words(comment.updated_at)%> ago.</time></i>
-		  <p><div class='comment-content'><span><%= comment.body %></span></div></p>
-		</p>
+<br />
 
-		<%= link_to 'Delete', [@posts, comment],
-               				method: :delete, 
-               				class: 'delete-link'  %>
-
-	<% end %>
-	
+<%= render 'layouts/show_comments' %>
 		
-	</div>
-</div>
-
-<% if user_signed_in? %>
-	<%= render 'layouts/comment_form' %>
-<% else %>
-
-<% end %>
+		<br />
+		<% if user_signed_in? %>
+			<%= render 'layouts/comment_form' %>
+		<% else %>
+		<% end %>
