@@ -1,0 +1,211 @@
+// Place all the styles related to the Comments controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post-title {
+
+	color: #2B3856;	
+	font-family: 'arial';
+	font-size: 40px;
+	font-weight: bold;
+}
+
+
+.home-author {
+	
+	font-size: 11px;
+}
+
+.home-body {
+	
+	font-size: 12px;
+}
+
+
+.navbar-text {
+	
+	padding-top: 0px;
+}
+
+
+.author-posts-count {
+	
+	font-size: 11px;
+}
+
+
+h3 b {
+
+	color: blue;
+	text-decoration: none;
+}
+
+h3 b a:hover {
+
+	text-decoration: none;
+	color: red;
+}
+
+
+.comment-class {
+	
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: #bbb dotted 1px;
+}
+
+.well {
+	
+	background-color: #ffffcc;
+}
+
+.navbar-container {
+
+	padding: 0 10% 0 10%;
+}
+
+.container {
+	
+	
+	min-height: 100%;
+	position: relative;
+	padding-bottom: 40px;
+}
+
+.content-container {
+	
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-bottom: 30px;
+	position: relative;
+}
+
+.avatar {
+
+	float: left;
+	padding-right: 10px;
+}
+
+.avatar-comment {
+
+	padding-bottom: 10px;
+}
+
+.date-update {
+	font-size: 10px;
+
+}
+
+.comments {
+	
+	border-bottom: #BBB dotted 1px;
+	padding: 10px;
+}
+
+.comment-form {
+
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.back-button {
+
+	padding-top: 30px;
+}
+
+.delete-link {
+
+	font-size: 12px;
+	text-decoration: none;
+	color: #66b3ff;	
+}
+
+.delete-link:hover {
+
+	color: #e60000;
+	text-decoration: none;
+}
+
+.author-name {
+
+	font-size: 12px;
+	text-decoration: none;
+	color: #66b3ff;
+}
+
+time {
+
+	font-size: 10px;
+	text-decoration: none;
+	color: #c1c1c1;
+
+}
+
+.comment-content {
+
+	padding-left: 10px;
+	padding-top: 5px;
+	font-size: 13px;
+}
+
+.footer {
+	
+	font-size: 12px;
+	padding: 50px;
+	margin: 0 auto;
+	color: #999;
+}
+
+.login {
+	
+	margin: 0 auto;
+}
+
+ul li {
+	
+	text-decoration: none;
+}
+
+ul li a:hover {
+	
+	text-decoration: none;
+	color: #e60000;
+}
+
+footer {
+	
+	background-color: #2C3539;
+}
+
+.footer-content {
+
+	padding: 40px 10% 20px 10%;
+}
+
+.footer-links {
+	color: #999;
+	text-decoration: none;
+	list-style: none;
+	font-size: 12px;
+	display: inline-block;
+}
+
+.footer-newsletter {
+	color: #999;
+	text-decoration: none;
+	list-style: none;
+	font-size: 12px;
+	display: inline-block;
+	padding-left: 150px;
+	vertical-align: top;
+	
+}
+
+.image-format {
+
+
+}
+
+.recent-post {
+
+}

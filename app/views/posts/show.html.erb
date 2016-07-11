@@ -1,27 +1,50 @@
-<p>
-  <h1><%= @posts.title %></h1>
-</p>
 
-<p><%= image_tag @posts.user.avatar.url(:thumb), class: 'avatar' %><h5>by <b><%= @posts.user.name %></b></h5>
-<span class='date-update'><i><%= @posts.updated_at.strftime("Updated last %a, %m/%d/%Y, %I:%M%p") %></i></span>
-</p>
+<div class='row'>
+	<div class='col-md-9'>
+	
+	<div>
+		<%= image_tag @posts.image.url(:medium), class: 'post-image', html: { height: 300, width: 800} %>
 
-<div class="comments">
+	</div>
+
 	<p>
-	  <strong><%= @posts.body %></strong>
+	  <div class='post-title'><%= @posts.title.upcase %></div>
 	</p>
 
-<br />
+	<div class='row'>
+		
+		<div class='col-md-1'>
+			<%= image_tag @posts.user.avatar.url(:thumb), class: 'img-circle' %>
+		</div>
+		
+		<div class='col-md-11'>
+			<h5>by <b><%= link_to @posts.user.name, @posts.user %></b></h5>
+			<span class='date-update'><i><%= @posts.updated_at.strftime("%a, %m/%d/%Y, %I:%M%p") %></i>
+			</span>
+		</div>
 
-	<h4><%= @posts.comments.count %> Comments</h4>
+	</div>
+
+	<div class="comments">
+		<p>
+		  <strong><%= simple_format(@posts.body) %></strong>
+		</p>
+
+	<br />
+
+		<h5><%= pluralize(@posts.comments.count, 'Comment') %></h5>
+	</div>
+
+	<br />
+
+	<%= render 'layouts/show_comments' %>
+			
+			<br />
+			<% if user_signed_in? %>
+				<%= render 'layouts/comment_form' %>
+			<% end %>
+
+	</div>
 </div>
 
-<br />
 
-<%= render 'layouts/show_comments' %>
-		
-		<br />
-		<% if user_signed_in? %>
-			<%= render 'layouts/comment_form' %>
-		<% else %>
-		<% end %>

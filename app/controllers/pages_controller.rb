@@ -12,8 +12,7 @@ class PagesController < ApplicationController
   end
 
   def profile
-    @profile = Pages.new
-    @user = @profile.user
+    
   end
 
 end

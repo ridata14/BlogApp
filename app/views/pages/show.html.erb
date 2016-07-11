@@ -1,0 +1,13 @@
+<p>
+  <h1><%= @posts.title %></h1>
+</p>
+
+<p><h3>by <%= @posts.user.name %></h3>
+<i><%= @posts.updated_at.strftime("Updated last %a, %m/%d/%Y, %I:%M%p") %></i>
+</p>
+
+<p>
+  <strong><%= @posts.body %></strong>
+</p>
+
+<%= link_to 'Back', posts_path %>

@@ -1,0 +1,7 @@
+<h3><%= @comment.user.name %></h3>
+
+<%= image_tag @comment.user.avatar.url(:medium) %>
+
+<br />
+
+<h5><%= @comment.user.posts.count %> Posts.</h5>

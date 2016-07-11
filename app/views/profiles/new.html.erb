@@ -1,0 +1,48 @@
+<h2>Your Profile</h2>
+<br />
+
+<div class='form-group col-md-6'>
+
+<%= form_for @profile do |f| %>
+  <% if @profile.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :birthday %><br>
+    <%= f.date_field :birthday, class: 'form-control' %>
+  </div> 
+
+    <div class="form-group">
+    <%= f.label :occupation %><br>
+    <%= f.text_field :occupation, class: 'form-control' %>
+  </div> 
+
+  <div class="form-group">
+    <%= f.label :gender %><br>
+    <%= f.select :gender, [['Male', 'male'], ['Female', 'female']], class: 'form-control' %>
+  </div> 
+
+  <div class="form-group">
+    <%= f.label :location %><br>
+    <%= f.text_field :location, class: 'form-control' %>
+  </div>
+
+  <br /><br />
+  <div class="actions">
+    <%= f.submit class: 'btn btn-default' %>
+    <%= link_to 'Back', posts_path, class: 'btn btn-default' %>
+  </div>
+
+ 
+<% end %>
+
+</div>

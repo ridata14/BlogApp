@@ -1,0 +1,33 @@
+<div class='row'>
+
+		<% @posts.comments.each do |comment| %>
+	
+			<div class='comment-class col-md-6 col-md-offset-1'>
+
+				<div class='col-md-4'>
+					<%= image_tag comment.user.avatar.url(:thumb), class: 'img-circle' %><br />
+					<div class='author-name'><b><%= link_to comment.user.name, comment.user %></b>
+					</div>
+					<div class="author-posts-count">Posts: <%= comment.user.posts.count %></div>
+					<div class="author-posts-count">Joined: <%= comment.user.created_at.strftime("%D") %></div>
+				
+				</div>
+				
+				<div class='col-md-8'>
+					
+					<i><time><%= time_ago_in_words(comment.updated_at)%> ago.</time></i>
+				  	<p><div class='comment-content'><span><%= comment.body %></span></div></p>
+				</div>
+
+				<% if user_signed_in? %>	
+					<% if current_user.name == comment.user.name %>
+						<%= link_to 'Delete', [@posts, comment],
+									method: :delete, 
+					               	class: 'delete-link' %>
+					<% end %>
+				<% end %>
+				
+			</div>
+		<% end %>
+		
+</div>

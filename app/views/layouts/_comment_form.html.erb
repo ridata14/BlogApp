@@ -1,0 +1,25 @@
+<div class='comment-form'>
+
+	<div class='form-group col-md-5'>
+
+	<%= form_for([@posts, @posts.comments.build]) do |f| %>
+
+		<div class="form-group">
+			<%= f.label 'Add a comment' %><br>
+			<%= f.text_area :body, class: 'form-control', rows: '3' %>
+		</div>
+		  <%= f.hidden_field :commenter, value: current_user.name %>
+		  <%= f.hidden_field :user_id, value: current_user.id %>
+		<div class="actions">
+			<%= f.submit %>
+			<div class='back-button'>
+
+			</div>
+		</div>
+		
+	<% end %>
+
+	</div>
+
+	
+</div>
